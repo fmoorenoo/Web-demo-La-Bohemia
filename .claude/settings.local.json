@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:auszeit-lanzarote.com)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\fermo\\\\OneDrive\\\\Escritorio\\\\Demos Kora\\\\la_bohemia\" -Recurse -File)",
+      "Bash(Select-Object FullName)",
+      "Skill(frontend-design)"
+    ]
+  }
+}
