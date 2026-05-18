@@ -165,17 +165,17 @@
     .ham {
       display: none;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
       cursor: pointer;
       background: none;
       border: none;
-      padding: 4px
+      padding: 6px
     }
 
     .ham span {
       display: block;
-      width: 22px;
-      height: 1.5px;
+      width: 28px;
+      height: 2px;
       background: var(--text);
       transition: all .3s
     }
@@ -241,15 +241,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 6px;
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
       background: rgba(196,137,58,.08);
       border: 1px solid rgba(196,137,58,.22);
       color: rgba(196,137,58,.65);
       cursor: pointer;
       transition: background .2s, color .2s, border-color .2s;
       flex-shrink: 0;
+    }
+    .mob-close svg {
+      transform: scale(1.4);
     }
     .mob-close:hover {
       background: rgba(196,137,58,.16);
@@ -264,6 +267,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: flex-start;
       padding: 0 28px;
     }
     .mob-nav a {
@@ -277,8 +281,8 @@
     }
     .mob-nav a:last-child { border-bottom: none; }
     .mob-num {
-      font-family: var(--fb);
-      font-size: 1.05rem;
+      font-family: var(--fd);
+      font-size: 1.3rem;
       font-weight: 700;
       letter-spacing: .14em;
       color: rgba(196,137,58,.28);
@@ -288,8 +292,8 @@
     }
     .mob-lbl {
       font-family: var(--fd);
-      font-size: clamp(1.7rem, 6vw, 2.2rem);
-      font-weight: 700;
+      font-size: clamp(1.7rem, 6vw, 2rem);
+      font-weight: 500;
       font-style: italic;
       color: rgba(255,255,255,.70);
       line-height: 1;
@@ -321,21 +325,21 @@
       border-top: 1px solid rgba(196,137,58,.10);
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 30px;
       flex-shrink: 0;
     }
     .mob-footer a {
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: .82rem;
+      font-size: 0.9rem;
       font-weight: 500;
       letter-spacing: .04em;
       color: rgba(255,255,255,.38);
       text-decoration: none;
       transition: color .2s;
     }
-    .mob-footer a i { font-size: .85rem; }
+    .mob-footer a i { font-size: 1rem; }
     .mob-footer a:hover { color: var(--gold-l); }
 
     /* ── HERO ── */
@@ -764,12 +768,11 @@
     }
 
     .exp-badge-lbl {
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 500;
       letter-spacing: .22em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 4px
     }
 
     .exp-badge-val {
@@ -1218,7 +1221,7 @@
       position: relative;
       overflow: hidden;
       padding: 128px 0;
-      background: var(--bg2)
+      background: radial-gradient(ellipse 90% 55% at 50% 45%, rgba(196,137,58,.07) 0%, transparent 65%), var(--bg2)
     }
 
     .menu-head {
@@ -1263,7 +1266,7 @@
       font-weight: 500;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: var(--text3);
+      color: var(--text2);
       background: transparent;
       border: none;
       border-bottom: 2px solid transparent;
@@ -1299,21 +1302,22 @@
       display: flex;
       align-items: flex-start;
       gap: 32px;
-      padding: 30px 0;
-      border-bottom: 1px solid rgba(196,137,58,.08);
+      padding: 30px 0 30px 0;
+      border-bottom: 1px solid rgba(196,137,58,.13);
+      border-left: 2px solid transparent;
       background: transparent;
-      border-left: none;
-      transition: background .25s;
+      transition: background .3s, border-left-color .3s, padding-left .3s;
       position: relative;
     }
 
     .m-item:first-child {
-      border-top: 1px solid rgba(196,137,58,.08)
+      border-top: 1px solid rgba(196,137,58,.13)
     }
 
     .m-item:hover {
-      background: transparent;
-      border-left-color: transparent
+      background: rgba(196,137,58,.04);
+      border-left-color: rgba(196,137,58,.55);
+      padding-left: 18px;
     }
 
     .m-num {
@@ -1322,11 +1326,16 @@
       font-weight: 700;
       font-style: italic;
       letter-spacing: -.02em;
-      color: rgba(196,137,58,.18);
+      color: rgba(196,137,58,.38);
       min-width: 38px;
       padding-top: 2px;
       flex-shrink: 0;
       text-align: right;
+      transition: color .3s;
+    }
+
+    .m-item:hover .m-num {
+      color: rgba(196,137,58,.7);
     }
 
     .m-body {
@@ -1336,22 +1345,24 @@
     .m-tag {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       font-size: 9px;
       font-weight: 600;
-      letter-spacing: .2em;
+      letter-spacing: .18em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 9px;
+      color: var(--gold-l);
+      background: rgba(196,137,58,.1);
+      border: 1px solid rgba(196,137,58,.22);
+      border-radius: 100px;
+      padding: 4px 10px 4px 8px;
+      margin-bottom: 10px;
     }
 
     .m-tag::before {
-      content: '';
-      display: inline-block;
-      width: 18px;
-      height: 1px;
-      background: var(--gold);
-      opacity: .55;
+      content: '✦';
+      font-size: 7px;
+      color: var(--gold);
+      letter-spacing: 0;
     }
 
     .m-ico {
@@ -1362,13 +1373,13 @@
     .m-item h3 {
       font-family: var(--fd);
       font-size: 20px;
-      font-weight: 400;
+      font-weight: 500;
       font-style: italic;
       color: var(--text);
       margin-bottom: 7px;
       line-height: 1.2;
       letter-spacing: -.01em;
-      transition: color .25s;
+      transition: color .3s;
     }
 
     .m-item:hover h3 {
@@ -1376,10 +1387,10 @@
     }
 
     .m-item p {
-      font-size: 13.5px;
+      font-size: 14px;
       font-weight: 300;
-      color: var(--text3);
-      line-height: 1.72;
+      color: var(--text2);
+      line-height: 1.7;
       max-width: 520px
     }
 
@@ -2338,15 +2349,12 @@
       </svg>
     </div>
 
-    <!-- top bar -->
-    <div class="mob-top">
-      <span class="mob-brand">La <em>Bohemia</em></span>
-      <button class="mob-close" onclick="closeMob()" aria-label="Cerrar menú">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-          <line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/>
-        </svg>
-      </button>
-    </div>
+    <!-- close -->
+    <button class="mob-close" onclick="closeMob()" aria-label="Cerrar menú">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/>
+      </svg>
+    </button>
 
     <!-- nav -->
     <nav class="mob-nav" aria-label="Menú móvil">
@@ -2542,7 +2550,7 @@
           </div>
           <div class="exp-badge">
             <div class="exp-badge-lbl">Desde</div>
-            <div class="exp-badge-val">2018</div>
+            <div class="exp-badge-val">2011</div>
             <div class="exp-badge-sub">En Costa Teguise</div>
           </div>
           <!-- diagonal por encima del badge -->
@@ -2696,16 +2704,6 @@
       </defs>
       <path d="M 45,372 C 64,318 26,266 45,208 C 64,152 24,100 45,46 C 54,18 40,4 45,0" stroke="url(#sg-gvl)" stroke-width="1.6" stroke-linecap="round"/>
       <path d="M 26,372 C 38,332 16,294 28,252 C 40,210 20,172 28,128 C 36,90 20,58 26,20" stroke="url(#sg-gvl)" stroke-width="1.0" stroke-linecap="round"/>
-    </svg>
-    <svg class="smoke-svg" style="right:2%;bottom:0;width:90px;height:45%" viewBox="0 0 90 380" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <linearGradient id="sg-gvr" x1="0" y1="1" x2="0" y2="0" gradientUnits="objectBoundingBox">
-          <stop offset="0%" stop-color="#c4893a" stop-opacity=".26"/>
-          <stop offset="100%" stop-color="#c4893a" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <path d="M 45,372 C 26,318 64,266 45,208 C 26,152 66,100 45,46 C 36,18 50,4 45,0" stroke="url(#sg-gvr)" stroke-width="1.6" stroke-linecap="round"/>
-      <path d="M 64,372 C 52,332 74,294 62,252 C 50,210 70,172 62,128 C 54,90 70,58 64,20" stroke="url(#sg-gvr)" stroke-width="1.0" stroke-linecap="round"/>
     </svg>
 
     <div class="container">
@@ -3288,7 +3286,7 @@
       grid.style.transform = 'translateY(10px)';
       setTimeout(() => {
         grid.innerHTML = menuData[cat].map((item, idx) => {
-          const tag = item.f ? `<div class="m-tag">Plato Estrella</div>` : '';
+          const tag = `<div class="m-tag" style="visibility:${item.f ? 'visible' : 'hidden'}">Plato Estrella</div>`;
           return `<div class="m-item"><span class="m-num">${String(idx + 1).padStart(2, '0')}</span><div class="m-body">${tag}<h3>${item.n}</h3><p>${item.d}</p></div></div>`;
         }).join('');
         grid.style.transition = 'opacity .38s ease, transform .38s ease';
