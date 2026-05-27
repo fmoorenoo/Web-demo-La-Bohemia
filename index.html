@@ -165,19 +165,36 @@
     .ham {
       display: none;
       flex-direction: column;
-      gap: 6px;
+      gap: var(--bar-gap);
       cursor: pointer;
       background: none;
       border: none;
-      padding: 6px
+      padding: 6px;
+      --bar-height: 2px;
+      --bar-gap: 6px;
     }
 
     .ham span {
       display: block;
       width: 28px;
-      height: 2px;
+      height: var(--bar-height);
       background: var(--text);
-      transition: all .3s
+      border-radius: 2px;
+      transition: transform .3s ease, opacity .2s ease;
+      transform-origin: center;
+    }
+
+    .ham.open span:nth-child(1) {
+      transform: translateY(calc(var(--bar-height) + var(--bar-gap))) rotate(45deg);
+    }
+
+    .ham.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .ham.open span:nth-child(3) {
+      transform: translateY(calc(-1 * (var(--bar-height) + var(--bar-gap)))) rotate(-45deg);
     }
 
     /* ── MOBILE MENU ── */
@@ -236,29 +253,6 @@
       letter-spacing: .01em;
     }
     .mob-brand em { color: var(--gold-l); font-style: italic; }
-
-    .mob-close {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 52px;
-      height: 52px;
-      border-radius: 8px;
-      background: rgba(196,137,58,.08);
-      border: 1px solid rgba(196,137,58,.22);
-      color: rgba(196,137,58,.65);
-      cursor: pointer;
-      transition: background .2s, color .2s, border-color .2s;
-      flex-shrink: 0;
-    }
-    .mob-close svg {
-      transform: scale(1.4);
-    }
-    .mob-close:hover {
-      background: rgba(196,137,58,.16);
-      border-color: rgba(196,137,58,.45);
-      color: var(--gold-l);
-    }
 
     .mob-nav {
       position: relative;
@@ -2248,7 +2242,7 @@
 
       .gal-slide {
         width: 94vw;
-        height: 63vw
+        height: 70vw
       }
 
       .gal-slide.prev {
@@ -2348,13 +2342,6 @@
         <path d="M 148,370 C 166,328 138,288 152,244 C 164,202 142,164 152,118 C 160,80 146,46 150,12" stroke="currentColor" stroke-width=".65" stroke-linecap="round"/>
       </svg>
     </div>
-
-    <!-- close -->
-    <button class="mob-close" onclick="closeMob()" aria-label="Cerrar menú">
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-        <line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/>
-      </svg>
-    </button>
 
     <!-- nav -->
     <nav class="mob-nav" aria-label="Menú móvil">
@@ -3107,20 +3094,13 @@
     const mob = document.getElementById('mob');
     ham.addEventListener('click', () => {
       const open = mob.classList.toggle('open');
+      ham.classList.toggle('open', open);
       document.body.style.overflow = open ? 'hidden' : '';
-      const [a, b, c] = ham.querySelectorAll('span');
-      if (open) {
-        a.style.transform = 'rotate(45deg) translate(4.5px,4.5px)';
-        b.style.opacity = '0';
-        c.style.transform = 'rotate(-45deg) translate(4.5px,-4.5px)';
-      } else {
-        [a, b, c].forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
-      }
     });
     function closeMob() {
       mob.classList.remove('open');
+      ham.classList.remove('open');
       document.body.style.overflow = '';
-      ham.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
     }
     window.addEventListener('resize', () => {
       if (window.innerWidth > 1024) closeMob();
