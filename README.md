@@ -27,9 +27,9 @@
 
 El resultado es una propuesta visual de página para un restaurante de **Costa Teguise, Lanzarote**, con una estética editorial, fotografías gastronómicas, tipografías cuidadas, animaciones y adaptación a diferentes dispositivos.
 
-**Se trata únicamente de una demostración visual (frontend).** No dispone de backend, base de datos ni funcionalidades de gestión conectadas a un servidor. Los elementos de la interfaz tienen como finalidad mostrar el diseño y la experiencia de navegación, no ofrecer un servicio comercial operativo.
+**Se trata únicamente de una demostración visual (frontend).** No dispone de backend, base de datos ni funcionalidades de gestión conectadas a un servidor.
 
-> Este proyecto es una prueba de concepto y no debe interpretarse como la web oficial del establecimiento ni como un servicio de reservas en funcionamiento.
+> Este proyecto es una prueba de concepto y no la web oficial del establecimiento.
 
 ## Características visuales
 
@@ -56,16 +56,9 @@ Las secciones relacionadas con reservas o contacto forman parte de la presentaci
 
 ## Diseño y recursos
 
-<div align="center">
-  <img src="terraza.jpg" alt="Fotografía de la terraza utilizada en la web" width="75%">
-  <p><sub>Imagen incluida entre los recursos del proyecto.</sub></p>
-</div>
-
 | Gastronomía | Ambiente |
 | :---: | :---: |
 | <img src="carne.jpg" alt="Fotografía gastronómica del proyecto" width="100%"> | <img src="decoracion.jpg" alt="Fotografía de decoración del establecimiento" width="100%"> |
-
-Las imágenes anteriores son **recursos del sitio**, no capturas de la interfaz en ejecución.
 
 ## Estado del proyecto
 
@@ -81,7 +74,3 @@ El objetivo ha sido explorar posibilidades de diseño, composición y experienci
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil_profesional-712B39?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/fernando-montelongo/)
 
 ---
-
-<div align="center">
-  <sub>La Bohemia · Lanzarote · Experimento visual con herramientas de IA</sub>
-</div>
