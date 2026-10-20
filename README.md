@@ -29,7 +29,6 @@ El resultado es una propuesta visual de página para un restaurante de **Costa T
 
 **Se trata únicamente de una demostración visual (frontend).** No dispone de backend, base de datos ni funcionalidades de gestión conectadas a un servidor.
 
-> Este proyecto es una prueba de concepto y no la web oficial del establecimiento.
 
 ## Características visuales
 
